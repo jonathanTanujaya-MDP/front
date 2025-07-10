@@ -14,7 +14,7 @@ interface Transaction {
   user_id: number;
   category_id: number;
   category_name: string;
-  amount: number;
+  amount: number | string;
   type: 'income' | 'expense';
   description: string;
   transaction_date: string;
