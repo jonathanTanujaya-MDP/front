@@ -13,7 +13,6 @@ import CategoryIcon from '@mui/icons-material/Category';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import AddIcon from '@mui/icons-material/Add';
-import React from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { useTheme } from './ThemeContext';
 

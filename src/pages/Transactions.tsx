@@ -184,7 +184,7 @@ const Transactions: React.FC = () => {
               />
               <ListItemSecondaryAction>
                 <Typography variant="body1" sx={{ color: transaction.type === 'income' ? 'green' : 'red', mr: 2 }}>
-                  {transaction.type === 'income' ? '+' : '-'} ${parseFloat(transaction.amount).toFixed(2)}
+                  {transaction.type === 'income' ? '+' : '-'} ${parseFloat(String(transaction.amount)).toFixed(2)}
                 </Typography>
                 <IconButton edge="end" onClick={() => handleOpenDialog(transaction)}><EditIcon /></IconButton>
                 <IconButton edge="end" onClick={() => handleDelete(transaction.id)}><DeleteIcon /></IconButton>

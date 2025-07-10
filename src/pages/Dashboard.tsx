@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { Typography, Box, Grid, Paper, useTheme, CircularProgress, Divider } from '@mui/material';
+import { Typography, Box, Paper, useTheme, CircularProgress, Divider } from '@mui/material';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -160,27 +160,28 @@ const Dashboard: React.FC = () => {
 
   return (
     <Box sx={{ flexGrow: 1, p: 3 }}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3, mb: 3 }}>
+        <Box sx={{ flex: 1 }}>
           <Paper sx={{ p: 2, textAlign: 'center' }}>
             <Typography variant="h6">Total Income</Typography>
             <Typography variant="h4" sx={{ color: theme.palette.success.main }}>${totalIncome.toFixed(2)}</Typography>
           </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
+        </Box>
+        <Box sx={{ flex: 1 }}>
           <Paper sx={{ p: 2, textAlign: 'center' }}>
             <Typography variant="h6">Total Expense</Typography>
             <Typography variant="h4" sx={{ color: theme.palette.error.main }}>${totalExpense.toFixed(2)}</Typography>
           </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
+        </Box>
+        <Box sx={{ flex: 1 }}>
           <Paper sx={{ p: 2, textAlign: 'center' }}>
             <Typography variant="h6">Net Balance</Typography>
             <Typography variant="h4" sx={{ color: netBalance >= 0 ? theme.palette.success.main : theme.palette.error.main }}>${netBalance.toFixed(2)}</Typography>
           </Paper>
-        </Grid>
+        </Box>
+      </Box>
         
-        <Grid item xs={12}>
+      <Box>
           <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3, alignItems: 'stretch' }}>
             <Paper sx={{ p: 2, flexGrow: 1, minHeight: '400px', display: 'flex', flexDirection: 'column' }}>
               <Typography variant="h6" align="center" gutterBottom>Expense by Category</Typography>
@@ -207,8 +208,7 @@ const Dashboard: React.FC = () => {
               )}
             </Paper>
           </Box>
-        </Grid>
-      </Grid>
+        </Box>
     </Box>
   );
 };
